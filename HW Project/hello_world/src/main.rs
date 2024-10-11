@@ -104,9 +104,28 @@ fn main(){
 
     // Control Flow
     if my_int == 10 {
-        print!("Value is 10.")
+        println!("Value is 10.")
     } else {
-        print!("Value is not 10.")
+        println!("Value is not 10.")
     }
 
+    // Lists
+    let mut my_list: Vec<&str>  = vec!["Omar", "Hernandez", "@omrhvs", "21"];
+    
+    /* 
+        To print a list, we use ':?' before the variable name, for
+        instance:
+     */
+    println!("{:?}", my_list);
+
+    /*
+        We can't mix different data types, this would cause an error:
+        let my_list2: Vec<&str>  = vec!["Omar", "Hernandez", "@omrhvs", 21];
+
+        To add an element to a list we use '.push'. Again, we can only do this
+        if the variable is mutable.
+    */
+
+    my_list.push("Venegas");
+    
 }
