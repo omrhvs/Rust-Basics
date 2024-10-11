@@ -154,4 +154,38 @@ fn main(){
     let mut my_map2: HashMap<&str, i32> = vec![("Omar", 21), ("Hernandez", 22), ("Venegas", 23)].into_iter().collect(); // Unordered key values
     my_map2.insert("Blas", 26);
     println!("{:?}", my_map2);
+
+    // Loops
+    let my_list3: Vec<&str>  = vec!["Omar", "Hernandez", "@omrhvs", "21"];
+    println!("List looped:");
+    for value in &my_list3 { // We use pointers referencing the list.
+        println!("{}", value);
+    }
+
+    let my_set3: HashSet<&str> = vec!["Omar", "Hernandez", "@omrhvs"].into_iter().collect();
+    println!("Set looped:");
+    for value in &my_set3 {
+        println!("{}", value);
+    }
+
+    let my_map2: HashMap<&str, i32> = vec![("Omar", 21), ("Hernandez", 22), ("Venegas", 23)].into_iter().collect(); // Unordered key values
+    println!("Map looped:");
+    for (key, value) in &my_map2 {
+        println!("{} {}", key, value);
+    }
+
+    // While
+    let mut my_counter = 0;
+
+    println!("Using while:");
+    while my_counter < my_list3.len() {
+        println!("{}", my_list3[my_counter]);
+        my_counter +=1;
+    }
+
+    my_function();
+}
+
+fn my_function(){
+    print!("This is a function.");
 }
