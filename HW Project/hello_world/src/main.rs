@@ -5,7 +5,7 @@
     hello.
 */
 
-use std::collections::{HashMap, HashSet};
+use std::{collections::{HashMap, HashSet}, fs::read_to_string};
 
 fn main(){
     println!("Hola Mundo!");
@@ -183,9 +183,32 @@ fn main(){
         my_counter +=1;
     }
 
+    // Function
     my_function();
+
+    // Structure
+    let my_struct = MyStruct::new("Omar", 21);  // We build our structure
+    println!("Structure: {}, {}", my_struct.name, my_struct.age);
+
 }
 
+// Functions
 fn my_function(){
-    print!("This is a function.");
+    println!("This is a function.");
+}
+
+// Structures
+struct MyStruct {
+    name: String,
+    age: i32,
+}
+
+// Implementations
+impl MyStruct {
+    fn new(name: &str, age: i32,) -> MyStruct {
+        MyStruct {
+            name: String::from(name),
+            age
+        } // This is like a constructor
+    }
 }
