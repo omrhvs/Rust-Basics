@@ -5,6 +5,8 @@
     hello.
 */
 
+use std::collections::{HashMap, HashSet};
+
 fn main(){
     println!("Hola Mundo!");
 
@@ -127,5 +129,29 @@ fn main(){
     */
 
     my_list.push("Venegas");
+    println!("{:?}", my_list);
+
+    // To print specific elements.
+    println!("First element: {:?}", my_list[0]);
     
+    // Sets
+    let my_set: HashSet<&str> = vec!["Omar", "Hernandez", "@omrhvs"].into_iter().collect();
+    println!("A: {:?}", my_set);
+
+    /*
+        Sets don't have order, so if we insert a new element, it will display
+        on a different position every execution. It also don't allow repeated
+        elements.
+    */
+    let mut my_set2: HashSet<&str> = vec!{"Omar", "Hernandez", "@omrhvs"}.into_iter().collect();
+    my_set2.insert("Test");
+    println!("B: {:?}", my_set2);
+
+    // Maps
+    let my_map: HashMap<&str, i32> = vec![("Omar", 21), ("Hernandez", 22), ("Venegas", 23)].into_iter().collect(); // Unordered key values
+    println!("{:?}", my_map);
+
+    let mut my_map2: HashMap<&str, i32> = vec![("Omar", 21), ("Hernandez", 22), ("Venegas", 23)].into_iter().collect(); // Unordered key values
+    my_map2.insert("Blas", 26);
+    println!("{:?}", my_map2);
 }
