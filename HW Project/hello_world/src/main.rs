@@ -26,7 +26,7 @@ fn main(){
         Unless we do the next.
      */ 
 
-    let mut my_string = "Text A";
+    let mut my_string = "Text B";
     println!("{}", my_string);
     my_string = "Now Text B";
 
